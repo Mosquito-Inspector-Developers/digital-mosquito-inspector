@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  attr_accessor :first_name, :last_name, :state, :zip, :address, :city
+  before_action :authenticate_user!, only: [:index, :edit, :update]
   before_action :set_user, only: [:show, :edit, :update]
+  attr_accessor :first_name, :last_name, :state, :zip, :address, :city
 
   def index
     @users = User.all
@@ -27,10 +28,4 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
-  private
-  def set_user
-    @user = User.find(params[:id])
-  end
-
 end

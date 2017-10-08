@@ -8,6 +8,9 @@ class User < ApplicationRecord
     self.email = email.downcase
   end
 
+  has_many :checklists
+  has_many :questions, through: :checklists
+
   validates :email, presence: true
   validates :email, uniqueness: { case_sensitive: false }
 end

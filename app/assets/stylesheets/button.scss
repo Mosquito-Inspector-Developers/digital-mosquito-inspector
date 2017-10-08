@@ -1,0 +1,15 @@
+.btn-container {
+    position: relative;
+    top: 70px;
+}
+.btn {
+    width: 150px;
+    background-color: #ff5757;
+    border-radius: 12px;
+    margin: auto;
+    padding: 12px 0 12px 0;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: #ff6f59;
+}
